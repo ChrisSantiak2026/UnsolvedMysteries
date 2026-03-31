@@ -1,0 +1,107 @@
+/* --- CSS Variables: The Noir Palette --- */
+:root {
+    --bg-dark: #050505;        /* Deep Edge Black */
+    --bg-center: #1a1a1a;      /* Lighter Center for Vignette */
+    --text-primary: #ffffff;   /* Pure White for Headings */
+    --text-muted: #d1d1d1;     /* Soft Grey for Body/Sage Voice */
+    --accent-red: #8b0000;     /* Authority/Warning Red */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+/* --- Base Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, var(--bg-center) 0%, var(--bg-dark) 100%);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    height: 100vh;
+    overflow: hidden; /* Kept focused for Sprint 1 Hero view */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header / Nav --- */
+.foyer-header {
+    padding: 2rem;
+}
+
+.nav-minimal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.status-tag {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+/* --- Hero Section --- */
+.foyer-hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero-preface {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive size */
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.divider {
+    height: 1px;
+    width: 60px;
+    background-color: var(--accent-red);
+    margin: 2rem auto;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+/* --- Components --- */
+.ghost-button {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    padding: 12px 30px;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.ghost-button:hover {
+    background: var(--text-primary);
+    color: var(--bg-dark);
+    border-color: var(--text-primary);
+}
