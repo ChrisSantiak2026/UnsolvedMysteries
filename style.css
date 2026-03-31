@@ -298,3 +298,60 @@ body {
     display: block;
     margin-bottom: 10px;
 }
+
+/* --- Sprint 4: Global Polish --- */
+
+/* Remove default link styling for the case cards */
+.case-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Smooth Scrolling for the "Enter" button */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Selection Color (Noir Style) */
+::selection {
+    background: var(--accent-red);
+    color: #fff;
+}
+
+/* Scrollbar Styling (The Sage Detail) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-red);
+}
+
+/* Ensure images don't "pop" in jarringly */
+img {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Removes default link styling from the cards */
+.case-link {
+    text-decoration: none;
+    color: inherit; /* Keeps your white/grey text colors */
+    display: block; /* Ensures the whole card area is clickable */
+}
+
+.case-link:focus {
+    outline: 2px solid var(--accent-red); /* Accessibility for keyboard users */
+    outline-offset: 4px;
+}
