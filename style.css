@@ -21,7 +21,7 @@ body {
     color: var(--text-muted);
     font-family: var(--font-sans);
     height: 100vh;
-    overflow: hidden; /* Kept focused for Sprint 1 Hero view */
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
 }
@@ -68,7 +68,7 @@ body {
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive size */
+    font-size: clamp(2.5rem, 8vw, 4rem); 
     color: var(--text-primary);
     line-height: 1.1;
 }
@@ -269,7 +269,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* --- Evidence Locker Grid --- */
+
 .evidence-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
