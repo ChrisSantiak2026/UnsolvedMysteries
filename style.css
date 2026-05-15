@@ -17,13 +17,11 @@
 }
 
 body {
-    background: radial-gradient(circle, var(--bg-center) 0%, var(--bg-dark) 100%);
-    color: var(--text-muted);
-    font-family: var(--font-sans);
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    background: 
+        radial-gradient(circle, var(--bg-center) 0%, var(--bg-dark) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='%238b0000' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-blend-mode: screen; 
+    /* Use 'screen' or 'lighten' to let the red peek through the dark gradient */
 }
 
 /* --- Header / Nav --- */
@@ -206,3 +204,25 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 img { animation: fadeIn 1.5s ease-in-out; }
+
+/* Era Header Styling */
+.era-header {
+    font-family: var(--font-serif);
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin: 60px 0 30px 0;
+    text-align: left;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add a subtle 'Current Year' indicator for the scroll */
+.timeline-era {
+    position: relative;
+    padding-bottom: 40px;
+}
