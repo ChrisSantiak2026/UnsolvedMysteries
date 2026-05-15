@@ -48,3 +48,48 @@
     width: 100%;
     filter: grayscale(100%) contrast(1.1);
 }
+/* --- Typography: Larger & More Concise --- */
+
+/* Increase lead paragraph size for better readability */
+.evidence-section p {
+    font-size: 1.25rem !important; /* Larger text as requested */
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/* Style the theory list to be punchy and professional */
+.theory-list li {
+    font-size: 1.1rem !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.theory-list strong {
+    color: var(--text-primary);
+    display: block; /* Moves the title to its own line for emphasis */
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* --- Navigation: Consistent Ghost Button --- */
+.back-link {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted) !important;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.back-link:hover {
+    background: var(--text-primary);
+    color: var(--bg-dark) !important;
+    border-color: var(--text-primary);
+    transform: translateX(-5px); /* Adds a subtle interactive 'nudge' */
+}
