@@ -1,10 +1,10 @@
 /* --- CSS Variables: The Noir Palette --- */
 :root {
-    --bg-dark: #050505;        /* Deep Edge Black */
-    --bg-center: #1a1a1a;      /* Lighter Center for Vignette */
-    --text-primary: #ffffff;   /* Pure White for Headings */
-    --text-muted: #d1d1d1;     /* Soft Grey for Body/Sage Voice */
-    --accent-red: #8b0000;     /* Authority/Warning Red */
+    --bg-dark: #050505;
+    --bg-center: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-muted: #d1d1d1;
+    --accent-red: #8b0000;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
 }
@@ -20,24 +20,27 @@ body {
     background: radial-gradient(circle, var(--bg-center) 0%, var(--bg-dark) 100%);
     color: var(--text-muted);
     font-family: var(--font-sans);
-    height: 100vh;
-    overflow: hidden; 
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
 
 /* --- Header / Nav --- */
-.foyer-header {
-    padding: 2rem;
-}
+.foyer-header { padding: 2rem; }
 
 .nav-minimal {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: 0.6;
+    opacity: 0.7;
+}
+
+.label-muted {
+    color: #555;
+    margin-right: 5px;
 }
 
 .status-tag {
@@ -47,7 +50,7 @@ body {
 
 /* --- Hero Section --- */
 .foyer-hero {
-    flex: 1;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,9 +64,10 @@ body {
 
 .hero-preface {
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
+    letter-spacing: 6px;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
 }
 
 .hero-title {
@@ -73,43 +77,43 @@ body {
     line-height: 1.1;
 }
 
-.divider {
+/* --- The Sage Decorations --- */
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.title-decoration .line {
     height: 1px;
-    width: 60px;
-    background-color: var(--accent-red);
-    margin: 2rem auto;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--accent-red), transparent);
 }
 
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
+.title-decoration .diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-red);
+    transform: rotate(45deg);
+}
+
+.hero-philosophy {
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    font-family: var(--font-serif);
     font-style: italic;
-}
-
-/* --- Components --- */
-.ghost-button {
-    background: transparent;
-    border: 1px solid var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.6;
     color: var(--text-muted);
-    padding: 12px 30px;
-    font-family: var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.4s ease;
+    opacity: 0.85;
 }
 
-.ghost-button:hover {
-    background: var(--text-primary);
-    color: var(--bg-dark);
-    border-color: var(--text-primary);
-}
-
-/* --- Exhibit Hall Layout --- */
+/* --- Gallery & Grid --- */
 .exhibit-hall {
     padding: 100px 5vw;
-    background: var(--bg-dark); /* Solid black to contrast with hero vignette */
+    background: var(--bg-dark);
 }
 
 .section-label {
@@ -118,9 +122,10 @@ body {
     letter-spacing: 4px;
     margin-bottom: 60px;
     opacity: 0.5;
+    color: var(--text-primary);
+    text-transform: uppercase;
 }
 
-/* --- The Grid --- */
 .exhibit-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -129,13 +134,18 @@ body {
     margin: 0 auto;
 }
 
-/* --- Case Cards --- */
+/* --- Exhibit Cards --- */
+.case-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .case-card {
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
     background: #111;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.4s ease;
+    border: 1px solid #1a1a1a;
 }
 
 .card-image-wrapper {
@@ -161,10 +171,7 @@ body {
     background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
 }
 
-.card-meta {
-    padding: 20px;
-    border-top: 1px solid #222;
-}
+.card-meta { padding: 20px; border-top: 1px solid #222; }
 
 .case-number {
     display: block;
@@ -174,241 +181,28 @@ body {
     margin-bottom: 5px;
 }
 
-.case-title {
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-}
+.case-title { font-size: 1.4rem; letter-spacing: 1px; color: #fff; }
 
 /* --- Hover Effects --- */
-.case-card:hover {
-    transform: translateY(-10px);
-}
+.case-card:hover { transform: translateY(-10px); }
+.case-card:hover img { filter: grayscale(20%) contrast(1.1) brightness(0.9); transform: scale(1.05); }
 
-.case-card:hover img {
-    filter: grayscale(20%) contrast(1.1) brightness(0.9);
-    transform: scale(1.05);
-}
-
-/* Allow scrolling for this sprint */
-body {
-    overflow-y: auto;
-}
-
-/* --- Case File Page Specifics --- */
-.case-file-page {
-    overflow-y: auto;
-    background: #050505;
-}
-
-.case-nav {
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #1a1a1a;
-}
-
-.back-link {
+/* --- Global Polish --- */
+.ghost-button {
+    background: transparent;
+    border: 1px solid var(--text-muted);
     color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.8rem;
+    padding: 12px 30px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.back-link:hover {
-    color: var(--text-primary);
-}
-
-.case-id {
-    font-size: 0.7rem;
     letter-spacing: 2px;
-    color: var(--accent-red);
-}
-
-/* --- Container & Content --- */
-.case-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-.case-title-large {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    text-align: center;
-}
-
-.case-subtitle {
-    text-align: center;
-    opacity: 0.5;
-    margin-bottom: 3rem;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-
-.case-hero-img img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    filter: sepia(20%) contrast(1.1) brightness(0.6);
-    margin-bottom: 4rem;
-}
-
-.section-heading {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    margin: 3rem 0 1.5rem 0;
-    border-left: 3px solid var(--accent-red);
-    padding-left: 15px;
-}
-
-.case-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
-
-
-.evidence-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.evidence-item img {
-    width: 100%;
-    filter: grayscale(100%) brightness(0.8);
-}
-
-.evidence-item figcaption {
-    font-size: 0.7rem;
-    margin-top: 10px;
-    opacity: 0.4;
-    text-transform: uppercase;
-}
-
-/* --- Source Styling --- */
-.official-source {
-    color: var(--text-primary);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-red);
-    text-underline-offset: 4px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* --- Sprint 4: Global Polish --- */
-
-/* Remove default link styling for the case cards */
-.case-link {
+    transition: 0.4s ease;
     text-decoration: none;
-    color: inherit;
-    display: block;
+    display: inline-block;
 }
 
-/* Smooth Scrolling for the "Enter" button */
-html {
-    scroll-behavior: smooth;
-}
+.ghost-button:hover { background: #fff; color: #000; }
 
-/* Custom Selection Color (Noir Style) */
-::selection {
-    background: var(--accent-red);
-    color: #fff;
-}
+::selection { background: var(--accent-red); color: #fff; }
 
-/* Scrollbar Styling (The Sage Detail) */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
-::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-red);
-}
-
-/* Ensure images don't "pop" in jarringly */
-img {
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Removes default link styling from the cards */
-.case-link {
-    text-decoration: none;
-    color: inherit; /* Keeps your white/grey text colors */
-    display: block; /* Ensures the whole card area is clickable */
-}
-
-.case-link:focus {
-    outline: 2px solid var(--accent-red); /* Accessibility for keyboard users */
-    outline-offset: 4px;
-}
-
-.nav-minimal {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem; /* Slightly smaller for 'Institutional' feel */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.7;
-}
-
-.label-muted {
-    color: #555; /* Subtle grey for the labels */
-    margin-right: 5px;
-}
-
-/* --- New Hero Decorations --- */
-.title-decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.title-decoration .line {
-    height: 1px;
-    width: 80px;
-    background: linear-gradient(to right, transparent, var(--accent-red), transparent);
-}
-
-.title-decoration .diamond {
-    width: 6px;
-    height: 6px;
-    background: var(--accent-red);
-    transform: rotate(45deg);
-}
-
-/* --- The Sage Philosophy Text --- */
-.hero-philosophy {
-    max-width: 500px;
-    margin: 0 auto 50px auto;
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-    opacity: 0.85;
-}
-
-/* Adjusting the hero preface to be more 'Academic' */
-.hero-preface {
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.6;
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+img { animation: fadeIn 1.5s ease-in-out; }
