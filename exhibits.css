@@ -1,0 +1,50 @@
+/* --- Exhibit Case File Overrides --- */
+
+.case-file-page {
+    overflow-y: auto !important; /* Force scrolling for long reports */
+    height: auto !important;     /* Allow the page to grow with content */
+    display: block !important;   /* Standard block flow for reading */
+}
+
+/* Ensure all text in the case file is readable */
+.case-file-page p, 
+.case-file-page h1, 
+.case-file-page h2, 
+.case-file-page figcaption {
+    color: var(--text-muted) !important;
+}
+
+.case-title-large {
+    color: var(--text-primary) !important;
+    margin-bottom: 0.5rem;
+}
+
+/* Style the links to remove the 'Default Blue' */
+.case-nav a, .case-sources a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.case-nav a:hover, .case-sources a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-red);
+}
+
+/* --- Layout Refinements --- */
+.case-container {
+    padding: 8rem 2rem 4rem 2rem; /* Give the header room below the nav */
+}
+
+.case-hero-img {
+    margin: 3rem 0;
+    border: 1px solid #222;
+    padding: 10px;
+    background: #0a0a0a; /* Subtle 'frame' effect */
+}
+
+.case-hero-img img {
+    width: 100%;
+    filter: grayscale(100%) contrast(1.1);
+}
