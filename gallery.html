@@ -1,18 +1,67 @@
-<main class="gallery-container">
-    <h1 class="gallery-title">The Chronological Archive</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronological Archive | The Unseen Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-page">
 
-    <section class="timeline-era">
-        <h2 class="era-header">1960 — 1980: The Cold Enigmas</h2>
-        <div class="exhibit-grid">
-            <a href="case-01.html" class="case-link">
-                <article class="case-card">...</article>
-            </a>
+    <nav class="gallery-nav">
+        <a href="index.html" class="back-to-home">
+            <span class="nav-arrow">←</span> Return to Foyer
+        </a>
+        <div class="archive-status">
+            <span class="label-muted">Access //</span> 
+            <span class="status-tag">Authenticated</span>
         </div>
-    </section>
+    </nav>
 
-    <section class="timeline-era">
-        <h2 class="era-header">1980 — 2000: The Digital Dawn</h2>
-        <div class="exhibit-grid">
+    <main class="gallery-container">
+        <header class="gallery-intro">
+            <h1 class="gallery-title">The Chronological Archive</h1>
+            <p class="curator-note">Evidence of Research: Our collection is categorized by the era of the initial investigation, allowing you to trace the evolution of forensic and speculative history.</p>
+        </header>
+
+        <section class="timeline-era">
+            <div class="era-header-wrapper">
+                <h2 class="era-header">1960 — 1980</h2>
+                <p class="era-curator-description">
+                    The "Cold Enigmas" represent an era of limited surveillance and physical evidence. These cases often involve isolated environments where the lack of modern communication left investigators in the dark.
+                </p>
             </div>
-    </section>
-</main>
+            
+            <div class="exhibit-grid">
+                <a href="case-01.html" class="case-link">
+                    <article class="case-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/dyatlov-thumbnail.jpg" alt="Dyatlov Pass Exhibit">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-meta">
+                            <span class="case-number">Case No. 001</span>
+                            <h3 class="case-title">The Dyatlov Pass</h3>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+        <section class="timeline-era">
+            <div class="era-header-wrapper">
+                <h2 class="era-header">1980 — 2000</h2>
+                <p class="era-curator-description">
+                    As technology advanced, so did the nature of our mysteries. This era marks the transition into digitized records and the birth of modern urban legends.
+                </p>
+            </div>
+            <div class="exhibit-grid">
+                </div>
+        </section>
+    </main>
+
+</body>
+</html>
