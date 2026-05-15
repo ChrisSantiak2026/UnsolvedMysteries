@@ -17,12 +17,12 @@ Create style.css with the Radial Gradient background and Google Fonts imports.
 
 Files to touch: index.html, style.css
 
-Acceptance Criteria: The page is pitch black at the edges, slightly lighter in the center, and text uses the Playfair Display font.
+Acceptance Criteria: The page is pitch black at the edges, text gives a bigger empahsis on people going into the site, and text uses the Playfair Display font.
 
 Verification Checklist:
 
-[ ] Background is #050505.
+[Check ] Background is #050505.
 
-[ ] No default "blue" links are visible.
+[Check ] No default "blue" links are visible.
 
-[ ] Page loads without errors in "Live Server."
+[Check  ] Page loads without errors in "Live Server."
